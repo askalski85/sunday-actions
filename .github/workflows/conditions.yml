@@ -13,7 +13,7 @@ jobs:
   always:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "I am master ${{ github.ref }}"
+      - run: echo "I am master ${{ github.ref }} ? ${{ github.ref == 'refs/heads/master' }}"
   
   run-master:
     runs-on: ubuntu-latest
