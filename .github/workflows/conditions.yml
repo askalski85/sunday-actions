@@ -13,16 +13,16 @@ jobs:
   always:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "I am master ${{ github.ref }} ? ${{ github.ref == 'refs/heads/master' }}"
+      - run: echo "I am master ${{ github.ref }} ? ${{ github.ref == 'refs/heads/main' }}"
   
   run-master:
     runs-on: ubuntu-latest
     steps:
       - run: echo "I am master"
-        if: ${{ github.ref == 'refs/heads/master' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
 
   run-no-master:
     runs-on: ubuntu-latest
     steps:
       - run: echo "I am no master"
-        if: ${{ github.ref != 'refs/heads/master' }}
+        if: ${{ github.ref != 'refs/heads/main' }}
