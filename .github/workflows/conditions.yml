@@ -11,9 +11,13 @@ on:
 
 jobs:
   run-master:
-    run: echo "I am master"
-    if: ${{ github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "I am master"
+        if: ${{ github.ref == 'refs/heads/master' }}
 
   run-no-master:
-    run: echo "I am no master"
-    if: ${{ github.ref != 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "I am no master"
+        if: ${{ github.ref != 'refs/heads/master' }}
